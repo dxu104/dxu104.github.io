@@ -7,7 +7,7 @@ const footerLink = [
     },
     {
         name: "Contact Me",
-        path: "ContactMe",
+        path: "contactme",
     },
 ];
 
@@ -17,7 +17,7 @@ function FooterLink({ setPage }) {
             <div key={item.name} className="footer-link">
                 <a href={`#${item.path}`} onClick={(e) => {
                         e.preventDefault(); // 阻止链接的默认行为
-                        window.location.hash = item.path; // 更新哈希部分
+                        // window.location.hash = item.path; // 更新哈希部分
                         setPage('/' + item.path); // 更新页面状态
                     }}>
                         {item.name}

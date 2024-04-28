@@ -17,6 +17,8 @@ function App() {
     function handlePageChange() {
       // 使用 window.location.hash 获取哈希值作为页面
       const path = window.location.hash.slice(1); // 移除前面的 '#'
+      // window.location.hash = path;
+      
       setPage(path || "/about"); // 如果没有哈希，则默认为 "/about"
     }
     handlePageChange(); // 设置初始页面

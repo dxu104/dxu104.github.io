@@ -1,22 +1,24 @@
-// import { useState } from 'react';
+import { useEffect } from 'react';
 import AboutMe from './AboutMe';
 import Experience from './Experience';
 import Projects from './Projects';
 import Resume from './Resume';
-import { useEffect } from 'react';
-
 import Privacy from './Privacy';
 import ContactMe from './ContactMe';
 
 function MainArea({ page, setPage }) {
     useEffect(() => {
         function handlePageChange() {
-            const path = window.location.hash.slice(1) || '/about'; // 获取哈希值，并提供默认页面
+            const path = window.location.hash.slice(1) || '/about';
+            console.log("Setting page to:", path);
             setPage(path);
         }
+        
 
-        window.addEventListener("hashchange", handlePageChange); // 监听 hashchange 事件
-        handlePageChange(); // 初始化页面状态
+        // 监听 hashchange 事件
+        window.addEventListener("hashchange", handlePageChange);
+        // 初始化页面状态
+        handlePageChange();
 
         return () => {
             window.removeEventListener("hashchange", handlePageChange);
@@ -25,25 +27,17 @@ function MainArea({ page, setPage }) {
 
     const renderPage = () => {
         switch (page) {
-            case '/about':
-                return <AboutMe />;
-            case '/experience':
-                return <Experience />;
-            case '/projects':
-                return <Projects />;
-            case '/resume':
-                return <Resume />;
-            case '/privacy':
-                return <Privacy />;
-            case '/contactme':
-                return <ContactMe />;
-            default:
-                return <AboutMe />;
+            case '/about': return <AboutMe />;
+            case '/experience': return <Experience />;
+            case '/projects': return <Projects />;
+            case '/resume': return <Resume />;
+            case '/privacy': return <Privacy />;
+            case '/contactme': return <ContactMe />;
+            default: return <AboutMe key={page} />;
         }
     };
 
     return <>{renderPage()}</>;
 }
 
-
-export default MainArea; 
+export default MainArea;
