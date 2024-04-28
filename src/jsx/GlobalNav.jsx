@@ -9,8 +9,8 @@ function GlobalNav({setPage, className }) {
     
     const handleNavClick = (path, e) => {
         e.preventDefault(); //阻止链接的默认行为
-        window.location.hash = path; // 更新 URL 的哈希部分
-        // setPage(path); // 更新页面状态
+        // window.location.hash = path; // 更新 URL 的哈希部分
+        setPage(path); // 更新页面状态
         //setShowMenu(false); // 关闭菜单（如果是移动视图）
     };
     
