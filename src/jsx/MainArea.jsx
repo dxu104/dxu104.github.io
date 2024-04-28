@@ -11,6 +11,7 @@ function MainArea({ page, setPage }) {
         function handlePageChange() {
             const path = window.location.hash.slice(1) || '/about';
             console.log("Setting page to:", path);
+           
             setPage(path);
         }
         
