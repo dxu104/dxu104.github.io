@@ -15,16 +15,18 @@ function App() {
 
   useEffect(() => {
     function handlePageChange() {
-      setPage(document.location.pathname); // 根据当前的路径设置页面
+      // 使用 window.location.hash 获取哈希值作为页面
+      const path = window.location.hash.slice(1); // 移除前面的 '#'
+      setPage(path || "/about"); // 如果没有哈希，则默认为 "/about"
     }
     handlePageChange(); // 设置初始页面
-
-    window.addEventListener("popstate", handlePageChange);
+  
+    window.addEventListener("hashchange", handlePageChange); // 监听 hashchange 事件而不是 popstate
     return () => {
-      window.removeEventListener("popstate", handlePageChange);
+      window.removeEventListener("hashchange", handlePageChange);
     };
-  }, []); // Important to have empty dependency array!
-
+  }, []);
+  
   const themeChange = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };

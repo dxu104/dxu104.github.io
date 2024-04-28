@@ -1,6 +1,6 @@
 import '../css/FooterLink.css';
 
-const footerLink =[
+const footerLink = [
     {
         name: "Privacy Policy",
         path: "privacy",
@@ -11,27 +11,26 @@ const footerLink =[
     },
 ];
 
-function FooterLink({setPage}){
-    
-    
+function FooterLink({ setPage }) {
     const list = footerLink.map(item => {
-        return(
+        return (
             <div key={item.name} className="footer-link">
-                <a href={`/${item.path}`} onClick={(e) => {
-                        e.preventDefault(); //阻止链接的默认行为
-                        window.history.pushState(null, '', e.target.pathname);
-                        setPage(e.target.pathname); // 更新页面状态
+                <a href={`#${item.path}`} onClick={(e) => {
+                        e.preventDefault(); // 阻止链接的默认行为
+                        window.location.hash = item.path; // 更新哈希部分
+                        setPage('/' + item.path); // 更新页面状态
                     }}>
                         {item.name}
                 </a>
             </div>    
         );
     });
-  
-    return(
+
+    return (
         <>
             {list}
         </>
     );
 }
+
 export default FooterLink;

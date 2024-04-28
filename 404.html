@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Page not found</title>
     <script>
-      // 解析当前 URL 的路径部分
-      var path = location.pathname;
+        // 解析当前 URL 的哈希部分
+        var path = location.pathname + location.search + location.hash;
+        
+        // 重定向到首页，并通过 hash 将原路径传递给首页
+        document.location.href = '/' + '#' + path;
+      </script>
       
-      // 重定向到首页，并通过 hash 将原路径传递给首页
-      // 这里假设你的首页能够使用 JavaScript 读取 hash，并据此渲染对应的组件或页面
-      document.location.href = '/#' + path;
-    </script>
 </head>
 <body>
     <h1>Page Not Found</h1>
