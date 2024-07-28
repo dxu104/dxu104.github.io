@@ -15,11 +15,14 @@ const Experience = () => {
                             <span className='company__location'>|   Milpitas, California</span>
                             <span className='company__enrollment'>May. 2024 – Present</span>
                         </p>
-                        <p className="title">Software Engineer Intern</p>
+                        <p className="title">Software Engineer</p>
                         <ul >
-                            <li>Crafted and implemented a Python extension for the Airflow workflow management system, improving the efficiency of computational resource use for bioinformatics and machine learning processes on cloud services such as AWS, in conjunction with Memory Machine Cloud software.</li>
-                            <li>Upgraded the capabilities of the Airflow extension by incorporating compatibility with cwl-airflow to facilitate support for the Common Workflow Language.</li>
-                            <li>Realized a significant enhancement of 30.5% in the processing capacity of the bioinformatics pipeline through the optimization of s3fs.</li>
+                            <li>
+                                Designed and implemented a scalable inference solution utilizing LlamaIndex with MemVerge Memory Machine. The solution allocates additional CXL memory to the vector database process via NUMA, leveraging the low latency, high bandwidth, and extensive memory capabilities of CXL to improve LLM performance. 
+                            </li>
+                            <li>
+                                Designed an algorithm to convert SJM job files into Nextflow scripts, facilitating seamless pipeline execution for AWS customers impacted by the discontinuation of SGE support in AWS ParallelCluster. This solution retained existing AWS customers and generated over $500K in revenue for the company.
+                            </li>
                         </ul>
                 </section>
 
