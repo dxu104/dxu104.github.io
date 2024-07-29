@@ -13,7 +13,7 @@ const Experience = () => {
                         <p className='experience__text'>
                             <span className='company__name'>MemVerge, Inc.</span>
                             <span className='company__location'>|   Milpitas, California</span>
-                            <span className='company__enrollment'>May. 2024 – Present</span>
+                            <span className='company__enrollment'>May. 2024 – Dec.2024</span>
                         </p>
                         <p className="title">Software Engineer</p>
                         <ul >
